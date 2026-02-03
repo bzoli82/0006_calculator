@@ -2,7 +2,7 @@ let input = document.getElementById("inputBox");
 // Csak a kalkulátor gombjait kezeljük, a piros PUSH gombot nem
 let buttons = document.querySelectorAll(".calculator button");
 
-let string = "0";
+let string = "";
 
 let arr = Array.from(buttons);
 

@@ -22,7 +22,6 @@ body {
 }
 
 .branding {
-  font-family: "Segment7Standard", monospace;
   font-weight: bold;
   font-style: italic;
   font-size: 200%;
@@ -155,10 +154,18 @@ body {
   margin: 2px;
 }
 
+.red {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* msg és gomb középre egymáshoz képest */
+}
+
 .red .msg {
   padding: 30px;
   width: 400px;
   background-color: #1c3068;
   border-radius: 50px;
   color: #ffffff;
+  text-align: center;
+  margin-bottom: 16px; /* kis távolság a gomb fölött */
 }
