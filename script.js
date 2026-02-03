@@ -1,7 +1,8 @@
 let input = document.getElementById("inputBox");
-let buttons = document.querySelectorAll("button");
+// Csak a kalkulátor gombjait kezeljük, a piros PUSH gombot nem
+let buttons = document.querySelectorAll(".calculator button");
 
-let string = "";
+let string = "0";
 
 let arr = Array.from(buttons);
 
@@ -22,3 +23,21 @@ arr.forEach((button) => {
     }
   });
 });
+
+// PUSH gomb: amíg nyomva tartjuk, a kalkulátor 180 fokban elfordul
+const calculator = document.querySelector(".calculator");
+const pushButton = document.querySelector(".red button");
+
+if (calculator && pushButton) {
+  const addFlip = () => calculator.classList.add("flipped");
+  const removeFlip = () => calculator.classList.remove("flipped");
+
+  pushButton.addEventListener("mousedown", addFlip);
+  pushButton.addEventListener("mouseup", removeFlip);
+  pushButton.addEventListener("mouseleave", removeFlip);
+
+  // Érintőkijelző támogatás
+  pushButton.addEventListener("touchstart", addFlip);
+  pushButton.addEventListener("touchend", removeFlip);
+  pushButton.addEventListener("touchcancel", removeFlip);
+}

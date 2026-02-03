@@ -28,6 +28,12 @@ body {
   font-size: 200%;
 }
 
+.calcapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .calculator {
   background-color: #fff;
   border: 5px solid #1090cf;
@@ -38,13 +44,18 @@ body {
   align-items: center;
   justify-content: center;
   width: 400px;
-  margin: 0 auto;
+  margin: 0;
+  margin-right: 50px;
   /*background-color: rgba(255, 255, 255, 0.5);*/
   background: linear-gradient(45deg, #c0c8cc, #6cb0d1);
-
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6),
     inset 10px 10px 20px rgba(255, 255, 255, 0.3),
     inset -10px -10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.calculator.flipped {
+  transform: rotate(180deg);
 }
 
 .display {
@@ -110,4 +121,44 @@ body {
 .calculator button.operator {
   background-color: #084a6a;
   color: #95ffa5;
+}
+
+.red button {
+  width: 120px;
+  height: 60px;
+  background-color: #bf2020;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(220, 7, 7, 0.25),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.15),
+    /* felső/fényes él */ inset -2px -2px 4px rgba(0, 0, 0, 0.4); /* alsó/sötét él */
+  font-weight: bold;
+  margin: 2px;
+}
+
+.red button:active {
+  background-color: #ac4a4a;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(85, 4, 4, 0.25),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.15),
+    /* felső/fényes él */ inset -2px -2px 4px rgba(0, 0, 0, 0.4); /* alsó/sötét él */
+  font-weight: bold;
+  margin: 2px;
+}
+
+.red .msg {
+  padding: 30px;
+  width: 400px;
+  background-color: #1c3068;
+  border-radius: 50px;
+  color: #ffffff;
 }
